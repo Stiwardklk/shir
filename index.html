@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Flores para Shirley</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #fff0f5, #e0f7fa);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #ff4081;
+      text-shadow: 2px 2px 5px #f8bbd0;
+      animation: aparecer 2s ease-out;
+      margin-bottom: 30px;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .flores {
+      display: flex;
+      gap: 40px;
+      animation: flotar 6s ease-in-out infinite;
+    }
+
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    svg {
+      width: 120px;
+      height: 120px;
+      animation: latido 4s infinite ease-in-out;
+      filter: drop-shadow(0 0 6px #ffccf9);
+    }
+
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .brillos {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moverBrillos 12s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moverBrillos {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Shirley 🌸</h1>
+  <div class="flores">
+    <!-- Flor 1 -->
+    <svg viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="6" fill="#ffeb3b"/>
+      <circle cx="32" cy="16" r="10" fill="#f48fb1"/>
+      <circle cx="48" cy="32" r="10" fill="#f48fb1"/>
+      <circle cx="32" cy="48" r="10" fill="#f48fb1"/>
+      <circle cx="16" cy="32" r="10" fill="#f48fb1"/>
+    </svg>
+
+    <!-- Flor 2 -->
+    <svg viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="6" fill="#ffeb3b"/>
+      <circle cx="38" cy="16" r="10" fill="#ba68c8"/>
+      <circle cx="48" cy="38" r="10" fill="#ba68c8"/>
+      <circle cx="26" cy="48" r="10" fill="#ba68c8"/>
+      <circle cx="16" cy="26" r="10" fill="#ba68c8"/>
+    </svg>
+
+    <!-- Flor 3 -->
+    <svg viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="6" fill="#ffeb3b"/>
+      <circle cx="40" cy="18" r="9" fill="#4dd0e1"/>
+      <circle cx="50" cy="42" r="9" fill="#4dd0e1"/>
+      <circle cx="24" cy="46" r="9" fill="#4dd0e1"/>
+      <circle cx="14" cy="26" r="9" fill="#4dd0e1"/>
+    </svg>
+  </div>
+
+  <div class="brillos"></div>
+</body>
+</html>
